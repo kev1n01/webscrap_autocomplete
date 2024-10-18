@@ -67,11 +67,15 @@ const data = JSON.parse(fs.readFileSync('data.json', 'utf-8'));
         // Enviar el formulario
         await page.click('div[role="button"].uArJ5e.UQuaGc.Y5sE8d.VkkpIf.QvWxOd')
 
-        console.log('send')
+        console.log(`send ${register.link}`)
+
+        await page.reload();
+        await page.reload();
+
         // Esperar una confirmación o un redireccionamiento antes de enviar el siguiente formulario
         await page.waitForTimeout(3000);
     }
 
     // Cerrar navegador
-    //   await browser.close();
+      await browser.close();
 })();

@@ -49,16 +49,15 @@ const data = JSON.parse(fs.readFileSync('dataobs.json', 'utf-8'));
         // Enviar el formulario
         await page.click('div[role="button"].uArJ5e.UQuaGc.Y5sE8d.VkkpIf.QvWxOd')
 
-        console.log(`send ${register.tipoo}`)
+        console.log(`send ${register.tipo}`)
 
+        await page.reload();
         await page.reload();
 
         // Esperar una confirmación o un redireccionamiento antes de enviar el siguiente formulario
         await page.waitForTimeout(3000);
     }
 
-    // <div class="c2gzEf"><a href="https://docs.google.com/forms/u/0/d/e/1FAIpQLScXBkPYjz2xvlIa2NQ4Y0htz1Z_45GE-J7LXEBOSV3k_IjW8A/viewform?usp=form_confirm">Enviar otra respuesta</a></div>
-
     // Cerrar navegador
-    //   await browser.close();
+    await browser.close();
 })();
